@@ -61,4 +61,9 @@ public class Detectives {
     public int getNivel(){
         return nivel;
     }
+    
+    @Override
+    public String toString(){
+        return "Nombre: "+nombre+" - Edad: "+edad+" - Nacionalidad: "+nacionalidad+" - Años Laborales: "+años+" - Nivel: "+nivel;
+    }
 }
