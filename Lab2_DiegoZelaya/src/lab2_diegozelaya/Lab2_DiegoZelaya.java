@@ -49,42 +49,24 @@ public class Lab2_DiegoZelaya {
                 System.out.print("Ingrese la posicion a modificar: ");
                 int m=scanner.nextInt();
                 if (m>=0 && m<detectives.size()){
-                    int m2=0;
-                    while (m2<1 || m2>5){
-                        System.out.println("Que desea modificar? \n1.Nombre \n2. Edad \n3. Nacionalidad \n4. Años Laborales \n5. Nivel");
-                        m2=scanner.nextInt();
-                        if (m2==1){
-                            System.out.print("Nombre: ");
-                            String no=scanner.next();
-                        }//Modifica Nombre
-                        if (m2==2){
-                            System.out.print("Edad: ");
-                            int e=scanner.nextInt();
-                        }//Modifica Edad
-                        if (m2==3){
-                            System.out.print("Nacionalidad: ");
-                            String na=scanner.next();
-                        }//Modifica Nacionalidad
-                        if (m2==4){
-                            System.out.print("Años Laborales: ");
-                            int a=scanner.nextInt();
-                        }//Modifica Años
-                        if (m2==5){
-                            int ni=0;
-                            while (ni<1 || ni>10){
-                                System.out.print("Nivel (1 a 10): ");
-                                ni=scanner.nextInt();
-                                if (ni<1 || ni>10){
-                                    System.out.println("Debe ingresar un valor entre 1 y 10");
-                                }//Error si ingresa un numero menor a 1 o mayor a 10
-                            }//Validar que el usuario ingreso un numero de 1 al 10
-                        }//Modificar Nivel
-                        if (m2>=1 && m2<=5){
-                            System.out.println("Posicion "+m2+" modificado con exito!");
-                        } else {
-                            System.out.println("Posicion "+m2+" no existe...");
-                        }//Envia mensaje si eligio un numero entre 1 y 10
-                    }//Verifica que el usuario cambie una de las opciones
+                    System.out.print("Nombre: ");
+                    String no=scanner.next();
+                    System.out.print("Edad: ");
+                    int e=scanner.nextInt();
+                    System.out.print("Nacionalidad: ");
+                    String na=scanner.next();
+                    System.out.print("Años Laborales: ");
+                    int a=scanner.nextInt();
+                    int ni=0;
+                    while (ni<1 || ni>10){
+                        System.out.print("Nivel (1 a 10): ");
+                        ni=scanner.nextInt();
+                        if (ni<1 || ni>10){
+                            System.out.println("Debe ingresar un valor entre 1 y 10");
+                        }//Error si ingresa un numero menor a 1 o mayor a 10
+                    }//Validar que el usuario ingreso un numero de 1 al 10
+                    detectives.set(m,new Detectives(no,e,na,a,ni));
+                    System.out.println("Posicion "+m+" fue modificada!");
                 } else {
                     System.out.println("Posicion "+m+" no existe...");
                 }//Verifica que la posicion existe
@@ -125,8 +107,8 @@ public class Lab2_DiegoZelaya {
                 String c=scanner.next();
                 int e1=0;
                 String e="";
-                while (e1!=1 || e1!=2){
-                    System.out.print("Estado (1. En proceso, 2. Resuelto: ");
+                while (e1!=1 && e1!=2){
+                    System.out.print("Estado (1. En proceso, 2. Resuelto): ");
                     e1=scanner.nextInt();
                     if (e1==1){
                         e="En proceso";
@@ -144,66 +126,48 @@ public class Lab2_DiegoZelaya {
                 System.out.print("Ingrese la posicion a modificar: ");
                 int m=scanner.nextInt();
                 if (m>=0 && m<detectives.size()){
-                    int m2=0;
-                    while (m2<1 || m2>5){
-                        System.out.println("Que desea modificar? \n1.Lugar \n2. Descripcion \n3. Tipo \n4. Detective a Cargo \n5. Estado");
-                        m2=scanner.nextInt();
-                        if (m2==1){
-                            System.out.print("Lugar: ");
-                            String l=scanner.next();System.out.print("Nombre: ");
-                        }//Modifica Lugar
-                        if (m2==2){
-                            System.out.print("Descripcion: ");
-                            String d=scanner.next();
-                        }//Modifica Descripcion
-                        if (m2==3){
-                            int t1=0;
-                            String t="";
-                            while (t1<1 || t1>3){
-                                System.out.print("Tipo (1. Homicidio, 2. Robo, 3. Secuestro): ");
-                                t1=scanner.nextInt();
-                                if (t1==1){
-                                    t="Homicidio";
-                                } else {
-                                    if (t1==2){
-                                        t="Robo";
-                                    } else {
-                                        if (t1==3){
-                                            t="Secuestro";
-                                        } else {
-                                            System.out.println("Debe ingresar 1, 2 o 3");
-                                        }//Error si no ingreso las opciones
-                                    }//Secuestro si ingreso 3
-                                }//Robo si ingreso 2
-                            }//Homicidio si ingreso 1
-                        }//Modifica Tipo
-                        if (m2==4){
-                            System.out.print("Detective a cargo: ");
-                            String c=scanner.next();
-                        }//Modificar Cargo
-                        if (m2==5){
-                            int e1=0;
-                            String e="";
-                            while (e1!=1 || e1!=2){
-                                System.out.print("Estado (1. En proceso, 2. Resuelto: ");
-                                e1=scanner.nextInt();
-                                if (e1==1){
-                                    e="En proceso";
-                                } else {
-                                    if (e1==2){
-                                        e="Resuelto";
-                                    } else {
-                                        System.out.println("Debe ingresar 1 o 2");
-                                    }//Error si no ingreso las opciones
-                                }//Resuelto si ingresa 2
-                            }//En proceso si ingresa 1
-                        }//Modificar Estado
-                        if (m2>=1 && m2<=6){
-                            System.out.println("Posicion "+m2+" modificado con exito!");
+                    System.out.print("Lugar: ");
+                    String l=scanner.next();
+                    System.out.print("Descripcion: ");
+                    String d=scanner.next();
+                    int t1=0;
+                    String t="";
+                    while (t1<1 || t1>3){
+                        System.out.print("Tipo (1. Homicidio, 2. Robo, 3. Secuestro): ");
+                        t1=scanner.nextInt();
+                        if (t1==1){
+                            t="Homicidio";
                         } else {
-                            System.out.println("Posicion "+m2+" no existe...");
-                        }//Envia mensaje si eligio un numero entre 1 y 10
-                    }//Verifica que el usuario cambie una de las opciones
+                            if (t1==2){
+                                t="Robo";
+                            } else {
+                                if (t1==3){
+                                    t="Secuestro";
+                                } else {
+                                    System.out.println("Debe ingresar 1, 2 o 3");
+                                }//Error si no ingreso las opciones
+                            }//Secuestro si ingreso 3
+                        }//Robo si ingreso 2
+                    }//Homicidio si ingreso 1
+                    System.out.print("Detective a cargo: ");
+                    String c=scanner.next();
+                    int e1=0;
+                    String e="";
+                    while (e1!=1 && e1!=2){
+                        System.out.print("Estado (1. En proceso, 2. Resuelto): ");
+                        e1=scanner.nextInt();
+                        if (e1==1){
+                            e="En proceso";
+                        } else {
+                            if (e1==2){
+                                e="Resuelto";
+                            } else {
+                                System.out.println("Debe ingresar 1 o 2");
+                            }//Error si no ingreso las opciones
+                        }//Resuelto si ingresa 2
+                    }//En proceso si ingresa 1
+                    casos.set(m,new Casos(l,d,t,c,e));
+                    System.out.println("Posicion "+m+" fue modificada!");
                 } else {
                     System.out.println("Posicion "+m+" no existe...");
                 }//Verifica que la posicion existe
@@ -211,7 +175,9 @@ public class Lab2_DiegoZelaya {
             if (opcion==7){
                 String salida="";
                 for (Object i : casos){
-                    salida+=""+casos.indexOf(i)+". "+i+"\n";
+                    if (casos.contains("Homicidio")){
+                        salida+=""+casos.indexOf(i)+". "+i+"\n";
+                    }
                 }
                 salida+="\n";
                 System.out.println("Casos: \n"+salida);
