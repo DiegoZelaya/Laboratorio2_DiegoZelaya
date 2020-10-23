@@ -10,6 +10,7 @@ public class Lab2_DiegoZelaya {
 
     public static void main(String[] args) {
         ArrayList detectives=new ArrayList();
+        ArrayList casos=new ArrayList();
         
         int opcion=0;
         while (opcion!=11){
@@ -97,7 +98,47 @@ public class Lab2_DiegoZelaya {
                 System.out.println("Grano \n"+salida);
             }//Listar Detectives
             if (opcion==5){
-                
+                System.out.print("Lugar: ");
+                String l=scanner.next();
+                System.out.print("Descripcion: ");
+                String d=scanner.next();
+                int t1=0;
+                String t="";
+                while (t1<1 || t1>3){
+                    System.out.print("Tipo (1. Homicidio, 2. Robo, 3. Secuestro): ");
+                    t1=scanner.nextInt();
+                    if (t1==1){
+                        t="Homicidio";
+                    } else {
+                        if (t1==2){
+                            t="Robo";
+                        } else {
+                            if (t1==3){
+                                t="Secuestro";
+                            } else {
+                                System.out.println("Debe ingresar 1, 2 o 3");
+                            }//Error si no ingreso las opciones
+                        }//Secuestro si ingreso 3
+                    }//Robo si ingreso 2
+                }//Homicidio si ingreso 1
+                System.out.print("Detective a cargo: ");
+                String c=scanner.next();
+                int e1=0;
+                String e="";
+                while (e1!=1 || e1!=2){
+                    System.out.print("Estado (1. En proceso, 2. Resuelto: ");
+                    e1=scanner.nextInt();
+                    if (t1==1){
+                        e="En proceso";
+                    } else {
+                        if (t1==2){
+                            e="Resuelto";
+                        } else {
+                            System.out.println("Debe ingresar 1 o 2");
+                        }//Error si no ingreso las opciones
+                    }//Resuelto si ingresa 2
+                }//En proceso si ingresa 1
+                casos.add(new Casos(l,d,t,c,e));
             }//Registrar Casos
             System.out.println();
         }//Fin while
