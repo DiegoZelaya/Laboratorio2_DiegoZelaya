@@ -96,6 +96,9 @@ public class Lab2_DiegoZelaya {
                 salida+="\n";
                 System.out.println("Grano \n"+salida);
             }//Listar Detectives
+            if (opcion==5){
+                
+            }//Registrar Casos
             System.out.println();
         }//Fin while
     }
